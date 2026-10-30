@@ -100,6 +100,43 @@ revoke all on function private.enforce_unique_card_supply(text) from public,anon
 revoke all on function private.check_inventory_unique_supply() from public,anon,authenticated;
 revoke all on function private.check_offer_unique_supply() from public,anon,authenticated;
 
+-- The founder reward is bound to the chosen username and granted only by the
+-- trusted auth.users trigger, never by a callable browser RPC.
+create or replace function public.handle_new_player()
+returns trigger language plpgsql security definer set search_path = '' as $$
+declare
+  v_username text:=lower(trim(coalesce(new.raw_user_meta_data->>'username','')));
+  v_display text:=trim(coalesce(new.raw_user_meta_data->>'display_name',''));
+  v_avatar text:=coalesce(new.raw_user_meta_data->>'avatar_id','star');
+  v_grant_user uuid;
+begin
+  if v_username !~ '^[a-z0-9_]{3,20}$' then
+    v_username:='player_'||left(replace(new.id::text,'-',''),10);
+  end if;
+  if char_length(v_display)<1 then v_display:=v_username; end if;
+  if v_avatar not in ('star','wave','compass','sun','leaf','moon','shell','anchor') then v_avatar:='star'; end if;
+  insert into public.player_profiles(user_id,username,display_name,avatar_id)
+    values(new.id,v_username,left(v_display,32),v_avatar);
+  insert into public.player_wallets(user_id,marks) values(new.id,500);
+
+  if v_username='broderchasyn' then
+    insert into private.founder_collection_grants(user_id,grant_key)
+      values(new.id,'founder-reverse-holo-and-noodly-card-v1')
+      on conflict do nothing returning user_id into v_grant_user;
+    if v_grant_user is not null then
+      insert into public.player_inventory(user_id,card_id,rarity,foil,reverse_holo,quantity)
+      select new.id,c.card_id,'common',false,true,1
+      from public.card_catalog c where not c.is_scenic and not c.is_promo_only
+      on conflict(user_id,card_id,rarity,foil,reverse_holo) do nothing;
+      insert into public.player_inventory(user_id,card_id,rarity,foil,reverse_holo,quantity)
+        values(new.id,'noodly_navigator','exquisite',false,false,1)
+        on conflict(user_id,card_id,rarity,foil,reverse_holo) do nothing;
+    end if;
+  end if;
+  return new;
+end;
+$$;
+
 create or replace function public.open_online_pack()
 returns jsonb language plpgsql security definer set search_path = '' as $$
 declare

@@ -74,9 +74,9 @@ unchanged.
 
 The account-exclusive **Noodly Navigator** is a separate, single-copy promo
 card. It never appears in packs, can be traded, and can be played from its
-owner's collection once per Duel for an immediate win. The founder grant also
-includes one reverse-holo copy of every playable design. The promo is an
-original, playful nod to a flying pasta spirit.
+owner's collection once per Duel for an immediate win. Signing up with the
+founder username automatically grants one reverse-holo copy of every playable
+design. The promo is an original, playful nod to a flying pasta spirit.
 
 ## Files
 
