@@ -284,12 +284,14 @@
     const accountTab=document.querySelector('[data-view="account"]');if(accountTab)accountTab.click();else renderAccount(document.querySelector('#app'));
     return true;
   }
-  function openAccountRoute(){
+  async function openAccountRoute(){
     const params=new URLSearchParams(window.location.search);
     const mode=params.get('login')==='1'?'signin':params.get('signup')==='1'?'signup':null;
     if(!mode)return false;
     startupPromptDismissedThisVisit=true;authMode=mode;setNotice('');
+    if(mode==='signup'&&client){try{await client.auth.signOut({scope:'local'});}catch{}}
     const accountTab=document.querySelector('[data-view="account"]');if(accountTab)accountTab.click();else renderAccount(document.querySelector('#app'));
+    await renderAccount(document.querySelector('#app'));
     return true;
   }
   function openPasswordRecoveryRoute(){
@@ -312,5 +314,5 @@
   window.GlasswakeAtlas.renderAccount = renderAccount;
   window.GlasswakeAtlas.loadOnlineInventory = loadOnlineInventory;
   window.GlasswakeAtlas.showStartupAccountPrompt = showStartupAccountPrompt;
-  setTimeout(()=>{if(showAuthRedirectError()||openPasswordRecoveryRoute())return;if(!openAccountRoute())showStartupAccountPrompt()},0);
+  setTimeout(async()=>{if(showAuthRedirectError()||openPasswordRecoveryRoute())return;if(!await openAccountRoute())showStartupAccountPrompt()},0);
 })();
