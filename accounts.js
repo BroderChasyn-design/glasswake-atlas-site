@@ -262,6 +262,12 @@
     const accountTab=document.querySelector('[data-view="account"]');if(accountTab)accountTab.click();else renderAccount(document.querySelector('#app'));
     return true;
   }
+  function openSignupRoute(){
+    if(new URLSearchParams(window.location.search).get('signup')!=='1')return false;
+    startupPromptDismissedThisVisit=true;authMode='signup';setNotice('');
+    const accountTab=document.querySelector('[data-view="account"]');if(accountTab)accountTab.click();else renderAccount(document.querySelector('#app'));
+    return true;
+  }
   async function loadOnlineInventory(){
     if(!client)throw new Error('Account service is not configured.');
     const {data:sessionData,error:sessionError}=await client.auth.getSession();if(sessionError)throw sessionError;
@@ -276,5 +282,5 @@
   window.GlasswakeAtlas.renderAccount = renderAccount;
   window.GlasswakeAtlas.loadOnlineInventory = loadOnlineInventory;
   window.GlasswakeAtlas.showStartupAccountPrompt = showStartupAccountPrompt;
-  setTimeout(()=>{if(!showAuthRedirectError())showStartupAccountPrompt()},0);
+  setTimeout(()=>{if(showAuthRedirectError())return;if(!openSignupRoute())showStartupAccountPrompt()},0);
 })();
