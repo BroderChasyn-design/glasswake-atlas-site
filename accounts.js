@@ -233,7 +233,7 @@
         node('div',{class:'eyebrow',text:'Welcome to God Gathering'}),
         node('h2',{id:'startup-account-title',text:'Create your player account'}),
         node('p',{class:'account-help',text:'Sign up with your email to protect your online collection and trade cards. Your email is used to sign in and is never shown on your public profile.'}),
-        node('p',{class:'account-help',text:'You can continue offline without an account. Device-only progress stays on this device.'}),
+        node('p',{class:'account-help',text:'You can continue offline without an account: view your collection, buy booster packs, and unlock table palettes with marks. That progress and those purchases stay on this device.'}),
         node('div',{class:'startup-account-actions'},[
           button('Create account with email',()=>openAccount('signup'),'btn primary'),
           button('I already have an account',()=>openAccount('signin'),'btn'),
