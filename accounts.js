@@ -241,12 +241,12 @@
       const dismiss=()=>{startupPromptDismissedThisVisit=true;backdrop.remove();};
       backdrop.append(node('section',{class:'panel startup-account-prompt',role:'dialog','aria-modal':'true','aria-labelledby':'startup-account-title'},[
         node('div',{class:'eyebrow',text:'Welcome to God Gathering'}),
-        node('h2',{id:'startup-account-title',text:'Create your player account'}),
-        node('p',{class:'account-help',text:'Sign up with your email to protect your online collection and trade cards. Your email is used to sign in and is never shown on your public profile.'}),
+        node('h2',{id:'startup-account-title',text:'Sign in to your player account'}),
+        node('p',{class:'account-help',text:'Sign in with your email to access your online collection and trades. Your email is private. New to God Gathering? Create an account here.'}),
         node('p',{class:'account-help',text:'You can continue offline without an account: view your collection, buy booster packs, and unlock table palettes with marks. That progress and those purchases stay on this device.'}),
         node('div',{class:'startup-account-actions'},[
-          button('Create account with email',()=>openAccount('signup'),'btn primary'),
-          button('I already have an account',()=>openAccount('signin'),'btn'),
+          button('Sign in with email',()=>openAccount('signin'),'btn primary'),
+          button('Create a new account',()=>openAccount('signup'),'btn'),
           button('Continue offline',dismiss,'btn ghost')
         ])
       ]));
@@ -262,9 +262,11 @@
     const accountTab=document.querySelector('[data-view="account"]');if(accountTab)accountTab.click();else renderAccount(document.querySelector('#app'));
     return true;
   }
-  function openSignupRoute(){
-    if(new URLSearchParams(window.location.search).get('signup')!=='1')return false;
-    startupPromptDismissedThisVisit=true;authMode='signup';setNotice('');
+  function openAccountRoute(){
+    const params=new URLSearchParams(window.location.search);
+    const mode=params.get('login')==='1'?'signin':params.get('signup')==='1'?'signup':null;
+    if(!mode)return false;
+    startupPromptDismissedThisVisit=true;authMode=mode;setNotice('');
     const accountTab=document.querySelector('[data-view="account"]');if(accountTab)accountTab.click();else renderAccount(document.querySelector('#app'));
     return true;
   }
@@ -282,5 +284,5 @@
   window.GlasswakeAtlas.renderAccount = renderAccount;
   window.GlasswakeAtlas.loadOnlineInventory = loadOnlineInventory;
   window.GlasswakeAtlas.showStartupAccountPrompt = showStartupAccountPrompt;
-  setTimeout(()=>{if(showAuthRedirectError())return;if(!openSignupRoute())showStartupAccountPrompt()},0);
+  setTimeout(()=>{if(showAuthRedirectError())return;if(!openAccountRoute())showStartupAccountPrompt()},0);
 })();
