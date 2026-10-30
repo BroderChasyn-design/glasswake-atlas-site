@@ -3,12 +3,13 @@
   const config = window.GA_SUPABASE_CONFIG || {};
   const projectUrl = String(config.url || '').trim();
   const publicKey = String(config.anonKey || config.publishableKey || '').trim();
+  const emailRedirectTo = 'https://broderchasyn-design.github.io/glasswake-atlas-site/';
   const client = projectUrl && publicKey && window.supabase?.createClient
     ? window.supabase.createClient(projectUrl, publicKey, {auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}})
     : null;
   const avatars = [{id:'star',icon:'✦'},{id:'wave',icon:'≈'},{id:'compass',icon:'◈'},{id:'sun',icon:'☼'},{id:'leaf',icon:'♧'},{id:'moon',icon:'☾'},{id:'shell',icon:'❋'},{id:'anchor',icon:'⚓'}];
   const rarities = ['common','expensive','extravagant','exquisite'];
-  let authMode = 'signin', selectedAvatar = 'star', targetPlayer = null, pendingFactor = null, notice = '', noticeIsError = false, viewToken = 0;
+  let authMode = 'signin', authEmail = '', selectedAvatar = 'star', targetPlayer = null, pendingFactor = null, notice = '', noticeIsError = false, viewToken = 0;
 
   const node = (tag, attrs={}, children=[]) => {
     const result = document.createElement(tag);
@@ -59,20 +60,29 @@
       form.append(label('Avatar',avatarPicker));
     }
     const email=input('email','email','you@example.com',{autocomplete:'email',required:true});
+    email.value=authEmail;
+    email.addEventListener('input',()=>{authEmail=email.value.trim()});
     const password=input('password','password',registering?'At least 10 characters':'Your password',{autocomplete:registering?'new-password':'current-password',minlength:registering?'10':undefined,required:true});
     form.append(label('Email',email),label('Password',password));
     form.append(node('button',{class:'btn primary',type:'submit',text:registering?'Create account':'Sign in'}));
+    if(!registering)form.append(button('Resend confirmation email',async()=>{
+      const mail=email.value.trim();if(!mail){email.focus();setNotice('Enter your email above, then choose resend confirmation.');renderAccount(document.querySelector('#app'));return;}
+      authEmail=mail;setNotice('Requesting a new confirmation email…');renderAccount(document.querySelector('#app'));
+      try{const {error}=await client.auth.resend({type:'signup',email:mail,options:{emailRedirectTo}});if(error)throw error;setNotice('If this address has an unconfirmed account, a fresh confirmation email has been sent. Check your inbox and spam folder.');await renderAccount(document.querySelector('#app'));}
+      catch(error){setNotice(error.message||'Could not resend the confirmation email.',true);await renderAccount(document.querySelector('#app'));}
+    },'btn ghost'));
     form.addEventListener('submit',async event=>{
       event.preventDefault();
       const values=new FormData(form), mail=String(values.get('email')||'').trim(), pass=String(values.get('password')||'');
+      authEmail=mail;
       setNotice('Contacting the account service…'); renderAccount(document.querySelector('#app'));
       try{
         if(registering){
           const username=String(values.get('username')||'').trim().toLowerCase(), displayName=String(values.get('display_name')||'').trim();
           if(!/^[a-z0-9_]{3,20}$/.test(username))throw new Error('Username must be 3–20 letters, numbers, or underscores.');
-          const {data,error}=await client.auth.signUp({email:mail,password:pass,options:{data:{username,display_name:displayName,avatar_id:selectedAvatar}}});
+          const {data,error}=await client.auth.signUp({email:mail,password:pass,options:{emailRedirectTo,data:{username,display_name:displayName,avatar_id:selectedAvatar}}});
           if(error)throw error;
-          if(!data.session){setNotice('Account created. Check your email to confirm it, then sign in.');authMode='signin';renderAccount(document.querySelector('#app'));return;}
+          if(!data.session){setNotice('Account created. Check your email and follow the confirmation link. If it has expired, use “Resend confirmation email” here.');authMode='signin';renderAccount(document.querySelector('#app'));return;}
         } else {
           const {error}=await client.auth.signInWithPassword({email:mail,password:pass});
           if(error)throw error;
@@ -243,6 +253,15 @@
       document.body.append(backdrop);
     }).catch(()=>{});
   }
+  function showAuthRedirectError(){
+    const params=new URLSearchParams(window.location.hash.replace(/^#/,''));
+    const message=params.get('error_description')||new URLSearchParams(window.location.search).get('error_description');
+    if(!message)return false;
+    authMode='signin';setNotice(`Email verification did not finish: ${message}. You can try the link again or resend confirmation below.`,true);
+    window.history.replaceState(null,'',`${window.location.pathname}${window.location.search}`);
+    const accountTab=document.querySelector('[data-view="account"]');if(accountTab)accountTab.click();else renderAccount(document.querySelector('#app'));
+    return true;
+  }
   async function loadOnlineInventory(){
     if(!client)throw new Error('Account service is not configured.');
     const {data:sessionData,error:sessionError}=await client.auth.getSession();if(sessionError)throw sessionError;
@@ -257,5 +276,5 @@
   window.GlasswakeAtlas.renderAccount = renderAccount;
   window.GlasswakeAtlas.loadOnlineInventory = loadOnlineInventory;
   window.GlasswakeAtlas.showStartupAccountPrompt = showStartupAccountPrompt;
-  setTimeout(showStartupAccountPrompt,0);
+  setTimeout(()=>{if(!showAuthRedirectError())showStartupAccountPrompt()},0);
 })();
