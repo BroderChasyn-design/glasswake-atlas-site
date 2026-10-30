@@ -9,7 +9,7 @@
     : null;
   const avatars = [{id:'star',icon:'✦'},{id:'wave',icon:'≈'},{id:'compass',icon:'◈'},{id:'sun',icon:'☼'},{id:'leaf',icon:'♧'},{id:'moon',icon:'☾'},{id:'shell',icon:'❋'},{id:'anchor',icon:'⚓'}];
   const rarities = ['common','expensive','extravagant','exquisite'];
-  let authMode = 'signin', authEmail = '', selectedAvatar = 'star', targetPlayer = null, pendingFactor = null, notice = '', noticeIsError = false, viewToken = 0;
+  let authMode = 'signin', authEmail = '', selectedAvatar = 'star', targetPlayer = null, pendingFactor = null, notice = '', noticeIsError = false, viewToken = 0, startupPromptDismissedThisVisit = false;
 
   const node = (tag, attrs={}, children=[]) => {
     const result = document.createElement(tag);
@@ -227,18 +227,18 @@
     }catch(error){if(token!==viewToken)return;root.replaceChildren(node('div',{class:'account-page'},[pageHeader(),noticeNode(),node('section',{class:'panel account-panel account-notice account-error',text:error.message||'Account service unavailable.'})].filter(Boolean)));}
   }
   function showStartupAccountPrompt(){
-    if(!client)return;
-    try{if(localStorage.getItem('god-gathering-account-prompt-dismissed')==='1')return;}catch{}
-    client.auth.getSession().then(({data,error})=>{
-      if(error||data?.session||document.querySelector('.startup-account-backdrop'))return;
+    if(startupPromptDismissedThisVisit)return;
+    const sessionRequest=client?client.auth.getSession():Promise.resolve({data:{session:null},error:null});
+    sessionRequest.then(({data})=>{
+      if(data?.session||startupPromptDismissedThisVisit||document.querySelector('.startup-account-backdrop'))return;
       const backdrop=node('div',{class:'startup-account-backdrop',role:'presentation'});
       const openAccount=async mode=>{
-        try{localStorage.setItem('god-gathering-account-prompt-dismissed','1');}catch{}
+        startupPromptDismissedThisVisit=true;
         authMode=mode;setNotice('');backdrop.remove();
         document.querySelector('[data-view="account"]')?.click();
         await renderAccount(document.querySelector('#app'));
       };
-      const dismiss=()=>{try{localStorage.setItem('god-gathering-account-prompt-dismissed','1');}catch{}backdrop.remove();};
+      const dismiss=()=>{startupPromptDismissedThisVisit=true;backdrop.remove();};
       backdrop.append(node('section',{class:'panel startup-account-prompt',role:'dialog','aria-modal':'true','aria-labelledby':'startup-account-title'},[
         node('div',{class:'eyebrow',text:'Welcome to God Gathering'}),
         node('h2',{id:'startup-account-title',text:'Create your player account'}),
