@@ -1,13 +1,16 @@
-const CACHE_NAME = 'glasswake-atlas-v1';
+const CACHE_NAME = 'glasswake-atlas-v2';
 const APP_FILES = [
   './',
   './index.html',
   './styles.css',
   './ad.css',
   './miner.css',
+  './accounts.css',
   './mechanics.js',
   './religion-themes.js',
   './game.js',
+  './accounts.js',
+  './backend-config.js',
   './pwa.js',
   './manifest.json',
   './icon-180.png',

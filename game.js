@@ -28,6 +28,8 @@
   const playable = [...base,...heroes];
   const landscapes = Array.from({length:24},(_,i)=>{const ti=i%peoples.length,p=peoples[ti],place=p.places[Math.floor(i/peoples.length)%p.places.length];return {id:`vista_${String(i+1).padStart(2,'0')}`,name:place,kind:'scenic',traditionIndex:ti,lore:p.stories[i%p.stories.length],artSeed:i+801};});
   const catalog = [...playable,...landscapes];
+  window.GlasswakeAtlas = window.GlasswakeAtlas || {};
+  window.GlasswakeAtlas.catalog = catalog;
   const cardById = Object.fromEntries(catalog.map(c=>[c.id,c]));
   const originalBaseIds = M.base.map(c=>c.id);
   const baseIdMap = Object.fromEntries(originalBaseIds.map((id,i)=>[id,base[i].id]));
@@ -226,7 +228,7 @@
   }
   function makeLanes(front,back,kind){const lanes=el('div',{class:'lanes'});for(let i=0;i<3;i++){const lane=el('div',{class:`lane ${kind==='player'&&selected&&canTarget(selected,i,match.player,match.rival)&&match.phase==='player'?'target':''}`,onclick:()=>kind==='player'?clickLane(i):null});lane.append(el('div',{class:'lane-title'},['West shoal','Midwater','Old causeway'][i]));const unit=front.units[i];lane.append(unit?el('div',{class:`lane-unit filled ${kind==='enemy'?'enemy':''}`},[el('div',{},[el('b',{},unit.card.name),el('span',{class:'unit-stats'},`${fmt(unit.card.attack+(unit.attackBonus||0))} ATK · ${fmt(unit.vigor)}/${fmt(unit.card.health)} VIG`),unit.stun?el('div',{class:'trap-tag'},'Chilled'):null])]):el('div',{class:'lane-unit'},'Open lane'));
       const trap=front.traps[i];lane.append(el('div',{class:'trap-tag'},trap?`⌁ ${trap.name}`:'No snare'));lanes.append(lane)}return lanes}
-  function render(){document.querySelector('#wallet').textContent=profile.coins.toLocaleString();if(view==='home')home();else if(view==='match')matchView();else if(view==='collection')collection();else if(view==='market')market();else if(view==='adcenter')adcenter();else if(view==='rules')rules();if(modal&&!modal.isConnected)document.body.append(modal)}
+  function render(){document.querySelector('#wallet').textContent=profile.coins.toLocaleString();if(view==='home')home();else if(view==='match')matchView();else if(view==='collection')collection();else if(view==='market')market();else if(view==='adcenter')adcenter();else if(view==='account'){if(typeof window.GlasswakeAtlas.renderAccount==='function')window.GlasswakeAtlas.renderAccount(app);else app.replaceChildren(header('Player account','Accounts & trading','Online accounts are being prepared.',[]))}else if(view==='rules')rules();if(modal&&!modal.isConnected)document.body.append(modal)}
   window.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal){modal.remove();modal=null}});
   if(minerHelperAvailable){setInterval(()=>{fetch('/api/miner/heartbeat',{method:'POST',headers:{'X-Glasswake-App':'1'},body:'{}'}).catch(()=>{});if(view==='adcenter')refreshMinerStatus()},5000);window.addEventListener('pagehide',()=>{fetch('/api/miner/stop',{method:'POST',headers:{'Content-Type':'application/json','X-Glasswake-App':'1'},body:'{}',keepalive:true}).catch(()=>{})})}
   saveGame();render();
