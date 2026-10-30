@@ -1,0 +1,3314 @@
+{
+  "base": [
+    {
+      "id": "card_001",
+      "kind": "creature",
+      "cost": 2,
+      "attack": 2,
+      "health": 2
+    },
+    {
+      "id": "card_002",
+      "kind": "creature",
+      "cost": 1,
+      "attack": 1,
+      "health": 3
+    },
+    {
+      "id": "card_003",
+      "kind": "creature",
+      "cost": 1,
+      "attack": 2,
+      "health": 1
+    },
+    {
+      "id": "card_004",
+      "kind": "creature",
+      "cost": 2,
+      "attack": 3,
+      "health": 2
+    },
+    {
+      "id": "card_005",
+      "kind": "creature",
+      "cost": 3,
+      "attack": 3,
+      "health": 4
+    },
+    {
+      "id": "card_006",
+      "kind": "creature",
+      "cost": 1,
+      "attack": 1,
+      "health": 2
+    },
+    {
+      "id": "card_007",
+      "kind": "creature",
+      "cost": 2,
+      "attack": 2,
+      "health": 3
+    },
+    {
+      "id": "card_008",
+      "kind": "creature",
+      "cost": 3,
+      "attack": 2,
+      "health": 4
+    },
+    {
+      "id": "card_009",
+      "kind": "creature",
+      "cost": 4,
+      "attack": 4,
+      "health": 4
+    },
+    {
+      "id": "card_010",
+      "kind": "creature",
+      "cost": 4,
+      "attack": 4,
+      "health": 3
+    },
+    {
+      "id": "card_011",
+      "kind": "creature",
+      "cost": 3,
+      "attack": 3,
+      "health": 3
+    },
+    {
+      "id": "card_012",
+      "kind": "creature",
+      "cost": 4,
+      "attack": 3,
+      "health": 5
+    },
+    {
+      "id": "card_013",
+      "kind": "spell",
+      "cost": 2,
+      "effect": "ashfire"
+    },
+    {
+      "id": "card_014",
+      "kind": "spell",
+      "cost": 2,
+      "effect": "frost"
+    },
+    {
+      "id": "card_015",
+      "kind": "spell",
+      "cost": 2,
+      "effect": "ward"
+    },
+    {
+      "id": "card_016",
+      "kind": "spell",
+      "cost": 1,
+      "effect": "heal"
+    },
+    {
+      "id": "card_017",
+      "kind": "spell",
+      "cost": 3,
+      "effect": "storm"
+    },
+    {
+      "id": "card_018",
+      "kind": "spell",
+      "cost": 3,
+      "effect": "drain"
+    },
+    {
+      "id": "card_019",
+      "kind": "trap",
+      "cost": 2,
+      "effect": "spike"
+    },
+    {
+      "id": "card_020",
+      "kind": "trap",
+      "cost": 1,
+      "effect": "snare"
+    },
+    {
+      "id": "card_021",
+      "kind": "trap",
+      "cost": 2,
+      "effect": "tripwire"
+    },
+    {
+      "id": "card_022",
+      "kind": "trap",
+      "cost": 2,
+      "effect": "guard"
+    },
+    {
+      "id": "card_023",
+      "kind": "gem",
+      "charge": 1
+    },
+    {
+      "id": "card_024",
+      "kind": "gem",
+      "charge": 2
+    },
+    {
+      "id": "card_025",
+      "kind": "gem",
+      "charge": 2
+    },
+    {
+      "id": "card_026",
+      "kind": "gem",
+      "charge": 3
+    },
+    {
+      "id": "card_027",
+      "kind": "gem",
+      "charge": 4
+    },
+    {
+      "id": "card_028",
+      "kind": "gem",
+      "charge": 3
+    },
+    {
+      "id": "card_029",
+      "kind": "gem",
+      "charge": 2
+    },
+    {
+      "id": "card_030",
+      "kind": "gem",
+      "charge": 5
+    },
+    {
+      "id": "card_031",
+      "kind": "character",
+      "cost": 1,
+      "attack": 1,
+      "health": 3,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "card_032",
+      "kind": "character",
+      "cost": 3,
+      "attack": 2,
+      "health": 4,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "card_033",
+      "kind": "character",
+      "cost": 1,
+      "attack": 1,
+      "health": 2,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "card_034",
+      "kind": "character",
+      "cost": 2,
+      "attack": 1,
+      "health": 3,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "card_035",
+      "kind": "character",
+      "cost": 3,
+      "attack": 3,
+      "health": 4,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "card_036",
+      "kind": "character",
+      "cost": 5,
+      "attack": 3,
+      "health": 5,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "card_037",
+      "kind": "character",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "card_038",
+      "kind": "character",
+      "cost": 4,
+      "attack": 2,
+      "health": 6,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "card_039",
+      "kind": "character",
+      "cost": 3,
+      "attack": 2,
+      "health": 4,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "card_040",
+      "kind": "character",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "card_041",
+      "kind": "character",
+      "cost": 3,
+      "attack": 2,
+      "health": 5,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "card_042",
+      "kind": "character",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "card_043",
+      "kind": "character",
+      "cost": 4,
+      "attack": 3,
+      "health": 4,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "card_044",
+      "kind": "character",
+      "cost": 2,
+      "attack": 1,
+      "health": 5,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    }
+  ],
+  "heroes": [
+    {
+      "id": "figure_001",
+      "cost": 3,
+      "attack": 2,
+      "health": 2,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_002",
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_003",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_004",
+      "cost": 5,
+      "attack": 2,
+      "health": 6,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_005",
+      "cost": 3,
+      "attack": 3,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_006",
+      "cost": 3,
+      "attack": 2,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_007",
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_008",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_009",
+      "cost": 5,
+      "attack": 3,
+      "health": 6,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_010",
+      "cost": 4,
+      "attack": 3,
+      "health": 6,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_011",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_012",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_013",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_014",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_015",
+      "cost": 1,
+      "attack": 1,
+      "health": 2,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_016",
+      "cost": 4,
+      "attack": 4,
+      "health": 5,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_017",
+      "cost": 3,
+      "attack": 1,
+      "health": 6,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_018",
+      "cost": 3,
+      "attack": 2,
+      "health": 2,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_019",
+      "cost": 4,
+      "attack": 1,
+      "health": 6,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_020",
+      "cost": 4,
+      "attack": 3,
+      "health": 6,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_021",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_022",
+      "cost": 5,
+      "attack": 4,
+      "health": 4,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_023",
+      "cost": 2,
+      "attack": 3,
+      "health": 2,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_024",
+      "cost": 2,
+      "attack": 3,
+      "health": 2,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_025",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_026",
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_027",
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_028",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_029",
+      "cost": 2,
+      "attack": 2,
+      "health": 3,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_030",
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_031",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_032",
+      "cost": 2,
+      "attack": 1,
+      "health": 3,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_033",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_034",
+      "cost": 4,
+      "attack": 3,
+      "health": 3,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_035",
+      "cost": 3,
+      "attack": 3,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_036",
+      "cost": 5,
+      "attack": 3,
+      "health": 6,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_037",
+      "cost": 3,
+      "attack": 2,
+      "health": 5,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_038",
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_039",
+      "cost": 3,
+      "attack": 3,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_040",
+      "cost": 4,
+      "attack": 1,
+      "health": 6,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_041",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_042",
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_043",
+      "cost": 4,
+      "attack": 3,
+      "health": 4,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_044",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_045",
+      "cost": 3,
+      "attack": 1,
+      "health": 4,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_046",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_047",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_048",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_049",
+      "cost": 3,
+      "attack": 1,
+      "health": 6,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_050",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_051",
+      "cost": 3,
+      "attack": 2,
+      "health": 4,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_052",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_053",
+      "cost": 3,
+      "attack": 1,
+      "health": 3,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_054",
+      "cost": 5,
+      "attack": 4,
+      "health": 4,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_055",
+      "cost": 4,
+      "attack": 1,
+      "health": 5,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_056",
+      "cost": 2,
+      "attack": 1,
+      "health": 3,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_057",
+      "cost": 3,
+      "attack": 2,
+      "health": 5,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_058",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_059",
+      "cost": 5,
+      "attack": 3,
+      "health": 6,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_060",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_061",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_062",
+      "cost": 5,
+      "attack": 4,
+      "health": 4,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_063",
+      "cost": 4,
+      "attack": 2,
+      "health": 6,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_064",
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_065",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_066",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_067",
+      "cost": 4,
+      "attack": 2,
+      "health": 4,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_068",
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_069",
+      "cost": 2,
+      "attack": 3,
+      "health": 2,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_070",
+      "cost": 5,
+      "attack": 2,
+      "health": 6,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_071",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_072",
+      "cost": 4,
+      "attack": 3,
+      "health": 3,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_073",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_074",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_075",
+      "cost": 2,
+      "attack": 1,
+      "health": 3,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_076",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_077",
+      "cost": 5,
+      "attack": 3,
+      "health": 6,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_078",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_079",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_080",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_081",
+      "cost": 2,
+      "attack": 1,
+      "health": 4,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_082",
+      "cost": 3,
+      "attack": 1,
+      "health": 3,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_083",
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_084",
+      "cost": 3,
+      "attack": 1,
+      "health": 3,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_085",
+      "cost": 2,
+      "attack": 2,
+      "health": 3,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_086",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_087",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_088",
+      "cost": 2,
+      "attack": 3,
+      "health": 2,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_089",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_090",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_091",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_092",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_093",
+      "cost": 3,
+      "attack": 1,
+      "health": 4,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_094",
+      "cost": 4,
+      "attack": 1,
+      "health": 6,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_095",
+      "cost": 5,
+      "attack": 4,
+      "health": 4,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_096",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_097",
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_098",
+      "cost": 3,
+      "attack": 2,
+      "health": 5,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_099",
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_100",
+      "cost": 5,
+      "attack": 4,
+      "health": 4,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_101",
+      "cost": 4,
+      "attack": 4,
+      "health": 5,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_102",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_103",
+      "cost": 3,
+      "attack": 1,
+      "health": 3,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_104",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_105",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_106",
+      "cost": 5,
+      "attack": 2,
+      "health": 6,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_107",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_108",
+      "cost": 3,
+      "attack": 2,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_109",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_110",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_111",
+      "cost": 4,
+      "attack": 1,
+      "health": 5,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_112",
+      "cost": 4,
+      "attack": 2,
+      "health": 6,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_113",
+      "cost": 2,
+      "attack": 2,
+      "health": 3,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_114",
+      "cost": 5,
+      "attack": 2,
+      "health": 6,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_115",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_116",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_117",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_118",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_119",
+      "cost": 3,
+      "attack": 3,
+      "health": 4,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_120",
+      "cost": 4,
+      "attack": 2,
+      "health": 6,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_121",
+      "cost": 2,
+      "attack": 1,
+      "health": 3,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_122",
+      "cost": 5,
+      "attack": 2,
+      "health": 6,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_123",
+      "cost": 2,
+      "attack": 3,
+      "health": 2,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_124",
+      "cost": 2,
+      "attack": 2,
+      "health": 3,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_125",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_126",
+      "cost": 4,
+      "attack": 3,
+      "health": 4,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_127",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_128",
+      "cost": 4,
+      "attack": 3,
+      "health": 6,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_129",
+      "cost": 2,
+      "attack": 1,
+      "health": 4,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_130",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_131",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_132",
+      "cost": 4,
+      "attack": 3,
+      "health": 4,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_133",
+      "cost": 3,
+      "attack": 3,
+      "health": 2,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_134",
+      "cost": 4,
+      "attack": 1,
+      "health": 5,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_135",
+      "cost": 4,
+      "attack": 1,
+      "health": 5,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_136",
+      "cost": 4,
+      "attack": 2,
+      "health": 6,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_137",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_138",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_139",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_140",
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_141",
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_142",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_143",
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_144",
+      "cost": 4,
+      "attack": 2,
+      "health": 6,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_145",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_146",
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_147",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_148",
+      "cost": 5,
+      "attack": 2,
+      "health": 6,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_149",
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_150",
+      "cost": 3,
+      "attack": 2,
+      "health": 4,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_151",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_152",
+      "cost": 3,
+      "attack": 1,
+      "health": 6,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_153",
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_154",
+      "cost": 3,
+      "attack": 3,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_155",
+      "cost": 3,
+      "attack": 3,
+      "health": 2,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_156",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_157",
+      "cost": 4,
+      "attack": 1,
+      "health": 6,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_158",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_159",
+      "cost": 3,
+      "attack": 2,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_160",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_161",
+      "cost": 4,
+      "attack": 2,
+      "health": 6,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_162",
+      "cost": 1,
+      "attack": 1,
+      "health": 2,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_163",
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_164",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_165",
+      "cost": 4,
+      "attack": 3,
+      "health": 4,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_166",
+      "cost": 4,
+      "attack": 2,
+      "health": 4,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_167",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_168",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_169",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_170",
+      "cost": 3,
+      "attack": 2,
+      "health": 2,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_171",
+      "cost": 4,
+      "attack": 2,
+      "health": 6,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_172",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_173",
+      "cost": 3,
+      "attack": 3,
+      "health": 2,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_174",
+      "cost": 3,
+      "attack": 3,
+      "health": 2,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_175",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_176",
+      "cost": 4,
+      "attack": 4,
+      "health": 2,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_177",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_178",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_179",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_180",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_181",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_182",
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_183",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_184",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_185",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_186",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_187",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_188",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_189",
+      "cost": 4,
+      "attack": 2,
+      "health": 4,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_190",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_191",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_192",
+      "cost": 4,
+      "attack": 3,
+      "health": 6,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_193",
+      "cost": 3,
+      "attack": 2,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_194",
+      "cost": 3,
+      "attack": 1,
+      "health": 4,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_195",
+      "cost": 3,
+      "attack": 3,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_196",
+      "cost": 3,
+      "attack": 2,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_197",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_198",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_199",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_200",
+      "cost": 4,
+      "attack": 3,
+      "health": 3,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_201",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_202",
+      "cost": 5,
+      "attack": 4,
+      "health": 4,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_203",
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_204",
+      "cost": 4,
+      "attack": 2,
+      "health": 4,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_205",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_206",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_207",
+      "cost": 4,
+      "attack": 2,
+      "health": 4,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_208",
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_209",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_210",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_211",
+      "cost": 5,
+      "attack": 3,
+      "health": 6,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_212",
+      "cost": 2,
+      "attack": 2,
+      "health": 3,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_213",
+      "cost": 4,
+      "attack": 3,
+      "health": 6,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_214",
+      "cost": 2,
+      "attack": 1,
+      "health": 3,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_215",
+      "cost": 3,
+      "attack": 2,
+      "health": 5,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_216",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_217",
+      "cost": 5,
+      "attack": 3,
+      "health": 6,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_218",
+      "cost": 2,
+      "attack": 1,
+      "health": 4,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_219",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_220",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_221",
+      "cost": 3,
+      "attack": 1,
+      "health": 4,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_222",
+      "cost": 2,
+      "attack": 2,
+      "health": 3,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_223",
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_224",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_225",
+      "cost": 4,
+      "attack": 3,
+      "health": 6,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_226",
+      "cost": 3,
+      "attack": 2,
+      "health": 4,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_227",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_228",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_229",
+      "cost": 3,
+      "attack": 3,
+      "health": 4,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_230",
+      "cost": 5,
+      "attack": 4,
+      "health": 4,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_231",
+      "cost": 1,
+      "attack": 1,
+      "health": 2,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_232",
+      "cost": 3,
+      "attack": 1,
+      "health": 3,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_233",
+      "cost": 1,
+      "attack": 1,
+      "health": 2,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_234",
+      "cost": 4,
+      "attack": 2,
+      "health": 4,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_235",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_236",
+      "cost": 4,
+      "attack": 3,
+      "health": 4,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_237",
+      "cost": 1,
+      "attack": 1,
+      "health": 2,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_238",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_239",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_240",
+      "cost": 3,
+      "attack": 1,
+      "health": 3,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_241",
+      "cost": 4,
+      "attack": 3,
+      "health": 4,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_242",
+      "cost": 5,
+      "attack": 4,
+      "health": 4,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_243",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_244",
+      "cost": 3,
+      "attack": 1,
+      "health": 4,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_245",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_246",
+      "cost": 1,
+      "attack": 1,
+      "health": 2,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_247",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_248",
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_249",
+      "cost": 3,
+      "attack": 2,
+      "health": 4,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_250",
+      "cost": 4,
+      "attack": 1,
+      "health": 6,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_251",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_252",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_253",
+      "cost": 5,
+      "attack": 3,
+      "health": 6,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_254",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_255",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_256",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_257",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_258",
+      "cost": 4,
+      "attack": 1,
+      "health": 6,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_259",
+      "cost": 4,
+      "attack": 1,
+      "health": 6,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_260",
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_261",
+      "cost": 3,
+      "attack": 2,
+      "health": 2,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_262",
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_263",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_264",
+      "cost": 4,
+      "attack": 3,
+      "health": 6,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_265",
+      "cost": 4,
+      "attack": 3,
+      "health": 4,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_266",
+      "cost": 4,
+      "attack": 3,
+      "health": 3,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_267",
+      "cost": 3,
+      "attack": 2,
+      "health": 4,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_268",
+      "cost": 3,
+      "attack": 4,
+      "health": 3,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_269",
+      "cost": 4,
+      "attack": 4,
+      "health": 3,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_270",
+      "cost": 5,
+      "attack": 2,
+      "health": 6,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_271",
+      "cost": 2,
+      "attack": 1,
+      "health": 3,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_272",
+      "cost": 2,
+      "attack": 1,
+      "health": 2,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_273",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_274",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_275",
+      "cost": 3,
+      "attack": 2,
+      "health": 2,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_276",
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_277",
+      "cost": 4,
+      "attack": 1,
+      "health": 6,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_278",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_279",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_280",
+      "cost": 5,
+      "attack": 3,
+      "health": 5,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_281",
+      "cost": 4,
+      "attack": 1,
+      "health": 5,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_282",
+      "cost": 2,
+      "attack": 1,
+      "health": 4,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_283",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_284",
+      "cost": 4,
+      "attack": 4,
+      "health": 2,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_285",
+      "cost": 4,
+      "attack": 3,
+      "health": 4,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_286",
+      "cost": 4,
+      "attack": 1,
+      "health": 5,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_287",
+      "cost": 2,
+      "attack": 2,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_288",
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_289",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_290",
+      "cost": 2,
+      "attack": 3,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_291",
+      "cost": 3,
+      "attack": 2,
+      "health": 5,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_292",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_293",
+      "cost": 5,
+      "attack": 3,
+      "health": 6,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_294",
+      "cost": 3,
+      "attack": 1,
+      "health": 4,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_295",
+      "cost": 4,
+      "attack": 2,
+      "health": 6,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_296",
+      "cost": 3,
+      "attack": 1,
+      "health": 4,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_297",
+      "cost": 1,
+      "attack": 1,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_298",
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_299",
+      "cost": 5,
+      "attack": 3,
+      "health": 6,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_300",
+      "cost": 4,
+      "attack": 1,
+      "health": 5,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_301",
+      "cost": 4,
+      "attack": 2,
+      "health": 6,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_302",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_303",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_304",
+      "cost": 2,
+      "attack": 3,
+      "health": 2,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_305",
+      "cost": 4,
+      "attack": 2,
+      "health": 4,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_306",
+      "cost": 3,
+      "attack": 1,
+      "health": 5,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_307",
+      "cost": 2,
+      "attack": 1,
+      "health": 4,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_308",
+      "cost": 4,
+      "attack": 2,
+      "health": 5,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_309",
+      "cost": 3,
+      "attack": 2,
+      "health": 4,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_310",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_311",
+      "cost": 3,
+      "attack": 2,
+      "health": 5,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_312",
+      "cost": 2,
+      "attack": 1,
+      "health": 3,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_313",
+      "cost": 3,
+      "attack": 2,
+      "health": 4,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_314",
+      "cost": 4,
+      "attack": 4,
+      "health": 2,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_315",
+      "cost": 5,
+      "attack": 2,
+      "health": 6,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_316",
+      "cost": 2,
+      "attack": 1,
+      "health": 3,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_317",
+      "cost": 5,
+      "attack": 3,
+      "health": 6,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_318",
+      "cost": 4,
+      "attack": 1,
+      "health": 6,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_319",
+      "cost": 3,
+      "attack": 3,
+      "health": 2,
+      "ability": "charge",
+      "abilityText": "Gain 1 Charge"
+    },
+    {
+      "id": "figure_320",
+      "cost": 5,
+      "attack": 4,
+      "health": 4,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_321",
+      "cost": 5,
+      "attack": 4,
+      "health": 6,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_322",
+      "cost": 4,
+      "attack": 3,
+      "health": 4,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_323",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_324",
+      "cost": 4,
+      "attack": 2,
+      "health": 6,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_325",
+      "cost": 1,
+      "attack": 1,
+      "health": 2,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_326",
+      "cost": 4,
+      "attack": 3,
+      "health": 5,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_327",
+      "cost": 3,
+      "attack": 1,
+      "health": 6,
+      "ability": "enemy2",
+      "abilityText": "Rival loses 2 Vigor"
+    },
+    {
+      "id": "figure_328",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_329",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_330",
+      "cost": 5,
+      "attack": 2,
+      "health": 6,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_331",
+      "cost": 5,
+      "attack": 4,
+      "health": 4,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_332",
+      "cost": 4,
+      "attack": 4,
+      "health": 5,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_333",
+      "cost": 4,
+      "attack": 3,
+      "health": 3,
+      "ability": "disarm_all",
+      "abilityText": "Clear rival traps"
+    },
+    {
+      "id": "figure_334",
+      "cost": 4,
+      "attack": 1,
+      "health": 6,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_335",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_336",
+      "cost": 3,
+      "attack": 3,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_337",
+      "cost": 2,
+      "attack": 2,
+      "health": 3,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_338",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_339",
+      "cost": 4,
+      "attack": 4,
+      "health": 5,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_340",
+      "cost": 3,
+      "attack": 4,
+      "health": 3,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_341",
+      "cost": 2,
+      "attack": 2,
+      "health": 3,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_342",
+      "cost": 5,
+      "attack": 2,
+      "health": 6,
+      "ability": "charge2",
+      "abilityText": "Gain 2 Charge"
+    },
+    {
+      "id": "figure_343",
+      "cost": 4,
+      "attack": 4,
+      "health": 4,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_344",
+      "cost": 3,
+      "attack": 1,
+      "health": 4,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_345",
+      "cost": 3,
+      "attack": 2,
+      "health": 4,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_346",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "sweep",
+      "abilityText": "Deal 1 to enemies"
+    },
+    {
+      "id": "figure_347",
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "ability": "disarm_lane",
+      "abilityText": "Disarm this lane"
+    },
+    {
+      "id": "figure_348",
+      "cost": 3,
+      "attack": 4,
+      "health": 2,
+      "ability": "heal_all",
+      "abilityText": "Heal all allies 1"
+    },
+    {
+      "id": "figure_349",
+      "cost": 5,
+      "attack": 4,
+      "health": 5,
+      "ability": "heal2",
+      "abilityText": "Heal 2 Vigor"
+    },
+    {
+      "id": "figure_350",
+      "cost": 4,
+      "attack": 3,
+      "health": 4,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    },
+    {
+      "id": "figure_351",
+      "cost": 3,
+      "attack": 2,
+      "health": 3,
+      "ability": "heal_weakest",
+      "abilityText": "Heal weakest ally 2"
+    },
+    {
+      "id": "figure_352",
+      "cost": 3,
+      "attack": 3,
+      "health": 3,
+      "ability": "rally",
+      "abilityText": "+1 ATK to allies"
+    }
+  ],
+  "decks": [
+    {
+      "key": "ashlander_rush",
+      "strategy": "rush",
+      "cards": [
+        "card_023",
+        "card_023",
+        "card_024",
+        "card_024",
+        "card_025",
+        "card_025",
+        "card_029",
+        "card_030",
+        "card_003",
+        "card_003",
+        "card_003",
+        "card_004",
+        "card_004",
+        "card_004",
+        "card_002",
+        "card_002",
+        "card_001",
+        "card_001",
+        "card_006",
+        "card_006",
+        "figure_268",
+        "figure_268",
+        "figure_290",
+        "figure_290",
+        "figure_024",
+        "figure_024",
+        "figure_003",
+        "card_013",
+        "card_013",
+        "card_018"
+      ]
+    },
+    {
+      "key": "telvanni_soulforge",
+      "strategy": "ramp",
+      "cards": [
+        "card_024",
+        "card_024",
+        "card_025",
+        "card_025",
+        "card_026",
+        "card_026",
+        "card_027",
+        "card_027",
+        "card_030",
+        "card_030",
+        "figure_162",
+        "figure_162",
+        "figure_071",
+        "figure_071",
+        "figure_229",
+        "figure_229",
+        "card_038",
+        "card_038",
+        "card_032",
+        "card_032",
+        "card_005",
+        "card_009",
+        "card_010",
+        "card_012",
+        "card_036",
+        "card_042",
+        "figure_332",
+        "card_017",
+        "card_018",
+        "card_013"
+      ]
+    },
+    {
+      "key": "tribunal_ward",
+      "strategy": "control",
+      "cards": [
+        "card_023",
+        "card_024",
+        "card_024",
+        "card_025",
+        "card_025",
+        "card_026",
+        "card_026",
+        "card_030",
+        "card_030",
+        "card_013",
+        "card_013",
+        "card_014",
+        "card_014",
+        "card_017",
+        "card_015",
+        "card_016",
+        "card_018",
+        "card_019",
+        "card_020",
+        "card_022",
+        "card_007",
+        "card_007",
+        "card_008",
+        "card_008",
+        "card_031",
+        "card_037",
+        "card_040",
+        "card_041",
+        "figure_152",
+        "figure_304"
+      ]
+    },
+    {
+      "key": "dwemer_lockdown",
+      "strategy": "traps",
+      "cards": [
+        "card_024",
+        "card_024",
+        "card_025",
+        "card_025",
+        "card_026",
+        "card_026",
+        "card_030",
+        "card_028",
+        "card_019",
+        "card_019",
+        "card_020",
+        "card_020",
+        "card_021",
+        "card_021",
+        "card_022",
+        "card_022",
+        "card_014",
+        "card_014",
+        "card_013",
+        "card_017",
+        "card_015",
+        "card_007",
+        "card_007",
+        "card_008",
+        "card_008",
+        "card_009",
+        "card_012",
+        "figure_085",
+        "figure_085",
+        "figure_015"
+      ]
+    },
+    {
+      "key": "redoran_rally",
+      "strategy": "rally",
+      "cards": [
+        "card_023",
+        "card_024",
+        "card_024",
+        "card_025",
+        "card_025",
+        "card_026",
+        "card_029",
+        "card_030",
+        "card_002",
+        "card_002",
+        "card_007",
+        "card_007",
+        "card_004",
+        "card_004",
+        "card_006",
+        "card_006",
+        "card_005",
+        "card_005",
+        "card_035",
+        "card_035",
+        "figure_352",
+        "figure_352",
+        "figure_246",
+        "figure_246",
+        "figure_056",
+        "figure_046",
+        "figure_307",
+        "card_015",
+        "card_015",
+        "card_013"
+      ]
+    }
+  ]
+}
