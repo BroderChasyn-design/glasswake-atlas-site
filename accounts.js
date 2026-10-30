@@ -42,7 +42,7 @@
       node('div',{class:'eyebrow',text:'Online features'}),
       node('h2',{text:'Backend setup needed'}),
       node('p',{class:'account-subtitle',text:'The game remains playable without an account backend. To enable sign-in and trading, configure a Supabase project and apply the database migration.'}),
-      node('p',{class:'account-help',text:'Add the project URL and anon/publishable key to backend-config.js, then run supabase/migrations/20261030000100_accounts_trading.sql in the Supabase SQL editor. Never put a service_role key in browser code.'})
+      node('p',{class:'account-help',text:'Add the project URL and anon/publishable key to backend-config.js, then run the account/trading migration followed by the reverse-holo migration in the Supabase SQL Editor. Never put a service_role key in browser code.'})
     ]);
     return node('div',{class:'account-page'},[pageHeader(),panel]);
   }
@@ -90,9 +90,9 @@
     return node('div',{class:'account-page'},[pageHeader(),noticeNode(),panel].filter(Boolean));
   }
 
-  function variantLabel(item){return `${item.rarity}${item.foil?' · foil':''}`;}
-  function inventoryKey(item){return `${item.card_id}|${item.rarity}|${item.foil?'1':'0'}`;}
-  function parseInventoryKey(value){const [card_id,rarity,foil]=String(value).split('|');return {card_id,rarity,foil:foil==='1'};}
+  function variantLabel(item){return `${item.rarity}${item.reverse_holo?' · reverse holo':item.foil?' · foil':''}`;}
+  function inventoryKey(item){return `${item.card_id}|${item.rarity}|${item.foil?'1':'0'}|${item.reverse_holo?'1':'0'}`;}
+  function parseInventoryKey(value){const [card_id,rarity,foil,reverse_holo]=String(value).split('|');return {card_id,rarity,foil:foil==='1',reverse_holo:reverse_holo==='1'};}
   function makeVariantSelect(name){return node('select',{name},rarities.map(rarity=>node('option',{value:rarity,text:rarity[0].toUpperCase()+rarity.slice(1)})));}
 
   async function mfaChallengeView(root,session,token){
@@ -113,9 +113,10 @@
     const cardOptions=side==='offered'?inventory.map(item=>node('option',{value:inventoryKey(item),text:`${cardName(item.card_id)} · ${variantLabel(item)} (have ${item.quantity})`})):cards.map(card=>node('option',{value:card.id,text:card.name}));
     const card=node('select',{class:'trade-card',required:true},cardOptions);
     const rarity=side==='offered'?null:makeVariantSelect('rarity');
-    const foil=side==='offered'?null:node('input',{type:'checkbox',class:'trade-foil','aria-label':'Foil'});
+    const foil=side==='offered'?null:node('label',{class:'trade-flag'},[node('input',{type:'checkbox',class:'trade-foil','aria-label':'Foil'}),node('span',{text:'Foil'})]);
+    const reverseHolo=side==='offered'?null:node('label',{class:'trade-flag'},[node('input',{type:'checkbox',class:'trade-reverse-holo','aria-label':'Reverse holo'}),node('span',{text:'Reverse holo'})]);
     const quantity=input('number','quantity','Qty',{class:'trade-quantity',min:'1',max:'10000',value:'1',required:true});
-    const row=node('div',{class:'trade-line'},[card,rarity,foil,quantity]);
+    const row=node('div',{class:'trade-line'},[card,rarity,foil,reverseHolo,quantity]);
     return row;
   }
 
@@ -142,8 +143,8 @@
     const [profileResult,walletResult,inventoryResult,tradeResult]=await Promise.all([
       client.from('player_profiles').select('user_id,username,display_name,avatar_id,created_at').eq('user_id',user.id).single(),
       client.from('player_wallets').select('marks').eq('user_id',user.id).single(),
-      client.from('player_inventory').select('card_id,rarity,foil,quantity').eq('user_id',user.id).order('card_id'),
-      client.from('trade_offers').select('id,sender_user_id,recipient_user_id,status,created_at,expires_at,trade_offer_items(side,card_id,rarity,foil,quantity)').or(`sender_user_id.eq.${user.id},recipient_user_id.eq.${user.id}`).order('created_at',{ascending:false}).limit(30)
+      client.from('player_inventory').select('card_id,rarity,foil,reverse_holo,quantity').eq('user_id',user.id).order('card_id'),
+      client.from('trade_offers').select('id,sender_user_id,recipient_user_id,status,created_at,expires_at,trade_offer_items(side,card_id,rarity,foil,reverse_holo,quantity)').or(`sender_user_id.eq.${user.id},recipient_user_id.eq.${user.id}`).order('created_at',{ascending:false}).limit(30)
     ]);
     if(token!==viewToken)return;
     for(const result of [profileResult,walletResult,inventoryResult,tradeResult])if(result.error)throw result.error;
@@ -168,7 +169,7 @@
     profileForm.append(label('Avatar',profileAvatarPicker),node('button',{class:'btn',type:'submit',text:'Save profile'}));
     profileForm.addEventListener('submit',async event=>{event.preventDefault();const values=new FormData(profileForm);try{const {error}=await client.rpc('update_player_profile',{p_username:String(values.get('username')||'').trim().toLowerCase(),p_display_name:String(values.get('display_name')||'').trim(),p_avatar_id:profileAvatar});if(error)throw error;setNotice('Profile saved.');await renderAccount(root);}catch(error){setNotice(error.message||'Could not save profile.',true);await renderAccount(root);}});
     const packPanel=node('section',{class:'panel account-panel'},[
-      node('div',{class:'eyebrow',text:'Online binder'}),node('h2',{text:'Your tradeable collection'}),node('p',{class:'account-subtitle',text:'This online binder is separate from the device-only collection. Server-opened packs add cards here; no private local save is uploaded.'}),
+      node('div',{class:'eyebrow',text:'Online binder'}),node('h2',{text:'Your tradeable collection'}),node('p',{class:'account-subtitle',text:'This online binder is separate from the device-only collection. Reverse-holo prints are tracked separately from foils; build a Duel deck from playable cards in this binder.'}),
       node('div',{class:'account-row'},[node('b',{text:`${wallet.marks} online marks`}),button('Open an online pack · 100 marks',async()=>{try{setNotice('Opening pack…');await renderAccount(root);const {data,error}=await client.rpc('open_online_pack');if(error)throw error;const pulled=(data||[]).map(item=>`${cardName(item.card_id)} · ${variantLabel(item)}`);setNotice(`Online pack opened: ${pulled.join(' | ')}`);await renderAccount(root);}catch(error){setNotice(error.message||'Could not open an online pack.',true);await renderAccount(root);}},'btn primary')])
     ]);
     const targetBox=node('div',{class:'account-row'},[input('text','recipient_username','Find a username',{autocomplete:'off',minlength:'3',maxlength:'20'}),button('Find player',async()=>{const field=targetBox.querySelector('input');const query=field.value.trim();if(!query){setNotice('Enter a player username first.',true);await renderAccount(root);return;}try{const {data,error}=await client.rpc('find_player',{p_username:query});if(error)throw error;targetPlayer=data?.[0]||null;setNotice(targetPlayer?`Found ${targetPlayer.display_name} (@${targetPlayer.username}).`: 'No player found for that username.',!targetPlayer);await renderAccount(root);}catch(error){setNotice(error.message||'Could not search players.',true);await renderAccount(root);}},'btn')]);
@@ -179,11 +180,11 @@
       node('b',{text:'You request'}),requestedLines,button('Add another requested card',()=>addLine(requestedLines,'requested'),'btn ghost'),
       node('button',{class:'btn primary',type:'submit',disabled:!inventory.length||!targetPlayer,text:targetPlayer?`Offer cards to @${targetPlayer.username}`:'Find a player first'})
     ]);
-    tradeForm.addEventListener('submit',async event=>{event.preventDefault();if(!targetPlayer)return;const readLines=(container,side)=>[...container.children].map(row=>{const card=row.querySelector('.trade-card').value,n=Number(row.querySelector('.trade-quantity').value);const variant=side==='offered'?parseInventoryKey(card):{card_id:card,rarity:row.querySelector('select[name="rarity"]').value,foil:row.querySelector('.trade-foil').checked};return {...variant,quantity:n};});try{const offered=readLines(offeredLines,'offered'),requested=readLines(requestedLines,'requested');if([...offered,...requested].some(item=>!Number.isInteger(item.quantity)||item.quantity<1||item.quantity>10000))throw new Error('Card quantities must be whole numbers from 1 to 10,000.');const {error}=await client.rpc('create_trade_offer',{p_recipient_username:targetPlayer.username,p_offered_items:offered,p_requested_items:requested});if(error)throw error;targetPlayer=null;setNotice('Bundle offer sent. Offered cards are held while it is pending and returned if declined or cancelled.');await renderAccount(root);}catch(error){setNotice(error.message||'Could not create the offer.',true);await renderAccount(root);}});
+    tradeForm.addEventListener('submit',async event=>{event.preventDefault();if(!targetPlayer)return;const readLines=(container,side)=>[...container.children].map(row=>{const card=row.querySelector('.trade-card').value,n=Number(row.querySelector('.trade-quantity').value);const variant=side==='offered'?parseInventoryKey(card):{card_id:card,rarity:row.querySelector('select[name="rarity"]').value,foil:row.querySelector('.trade-foil').checked,reverse_holo:row.querySelector('.trade-reverse-holo').checked};return {...variant,quantity:n};});try{const offered=readLines(offeredLines,'offered'),requested=readLines(requestedLines,'requested');if([...offered,...requested].some(item=>!Number.isInteger(item.quantity)||item.quantity<1||item.quantity>10000))throw new Error('Card quantities must be whole numbers from 1 to 10,000.');if([...offered,...requested].some(item=>item.foil&&item.reverse_holo))throw new Error('Choose either foil or reverse holo for each card.');const {error}=await client.rpc('create_trade_offer',{p_recipient_username:targetPlayer.username,p_offered_items:offered,p_requested_items:requested});if(error)throw error;targetPlayer=null;setNotice('Bundle offer sent. Offered cards are held while it is pending and returned if declined or cancelled.');await renderAccount(root);}catch(error){setNotice(error.message||'Could not create the offer.',true);await renderAccount(root);}});
     const tradePanel=node('section',{class:'panel account-panel'},[node('div',{class:'eyebrow',text:'Player exchange'}),node('h2',{text:'Offer card bundles'}),node('p',{class:'account-subtitle',text:'Trade one card for several cards, several for one, or any other bundle. Your offered cards are held safely while the offer is pending.'}),targetBox,targetPlayer?node('div',{class:'account-notice',text:`Trading with ${targetPlayer.display_name} (@${targetPlayer.username})`}):null,tradeForm]);
     const tradeRows=trades.length?trades.map(trade=>{
       const incoming=trade.recipient_user_id===user.id, peer=peerMap.get(incoming?trade.sender_user_id:trade.recipient_user_id),status=trade.status;
-      const bundleText=side=>trade.trade_offer_items.filter(item=>item.side===side).map(item=>`${item.quantity} × ${cardName(item.card_id)} (${item.rarity}${item.foil?' foil':''})`).join(', ');
+      const bundleText=side=>trade.trade_offer_items.filter(item=>item.side===side).map(item=>`${item.quantity} × ${cardName(item.card_id)} (${item.rarity}${item.reverse_holo?' reverse holo':item.foil?' foil':''})`).join(', ');
       const details=incoming?`${peer?.display_name||'Player'} offers ${bundleText('offered')} for your ${bundleText('requested')}.`:`Offer to ${peer?.display_name||'player'}: ${bundleText('offered')} for ${bundleText('requested')}.`;
       const row=node('div',{class:'trade-item'},[node('span',{},[node('b',{text:status==='pending'?(incoming?'Incoming offer':'Outgoing offer'):`Trade ${status}`}),node('small',{text:details})])]);
       if(status==='pending'){
@@ -215,6 +216,17 @@
       else root.replaceChildren(authView());
     }catch(error){if(token!==viewToken)return;root.replaceChildren(node('div',{class:'account-page'},[pageHeader(),noticeNode(),node('section',{class:'panel account-panel account-notice account-error',text:error.message||'Account service unavailable.'})].filter(Boolean)));}
   }
+  async function loadOnlineInventory(){
+    if(!client)throw new Error('Account service is not configured.');
+    const {data:sessionData,error:sessionError}=await client.auth.getSession();if(sessionError)throw sessionError;
+    if(!sessionData.session)throw new Error('Sign in from Account & Trade before building a deck from your binder.');
+    const {data:aal,error:aalError}=await client.auth.mfa.getAuthenticatorAssuranceLevel();if(aalError)throw aalError;
+    if(aal.nextLevel==='aal2'&&aal.currentLevel!=='aal2')throw new Error('Open Account & Trade and verify your authenticator before using your collection.');
+    const {data,error}=await client.from('player_inventory').select('card_id,rarity,foil,reverse_holo,quantity').eq('user_id',sessionData.session.user.id).order('card_id');
+    if(error)throw error;
+    return data||[];
+  }
   window.GlasswakeAtlas = window.GlasswakeAtlas || {};
   window.GlasswakeAtlas.renderAccount = renderAccount;
+  window.GlasswakeAtlas.loadOnlineInventory = loadOnlineInventory;
 })();
