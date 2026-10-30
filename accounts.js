@@ -65,12 +65,20 @@
     const password=input('password','password',registering?'At least 10 characters':'Your password',{autocomplete:registering?'new-password':'current-password',minlength:registering?'10':undefined,required:true});
     form.append(label('Email',email),label('Password',password));
     form.append(node('button',{class:'btn primary',type:'submit',text:registering?'Create account':'Sign in'}));
-    if(!registering)form.append(button('Resend confirmation email',async()=>{
-      const mail=email.value.trim();if(!mail){email.focus();setNotice('Enter your email above, then choose resend confirmation.');renderAccount(document.querySelector('#app'));return;}
-      authEmail=mail;setNotice('Requesting a new confirmation email…');renderAccount(document.querySelector('#app'));
-      try{const {error}=await client.auth.resend({type:'signup',email:mail,options:{emailRedirectTo}});if(error)throw error;setNotice('If this address has an unconfirmed account, a fresh confirmation email has been sent. Check your inbox and spam folder.');await renderAccount(document.querySelector('#app'));}
-      catch(error){setNotice(error.message||'Could not resend the confirmation email.',true);await renderAccount(document.querySelector('#app'));}
-    },'btn ghost'));
+    if(!registering){
+      form.append(button('Resend confirmation email',async()=>{
+        const mail=email.value.trim();if(!mail){email.focus();setNotice('Enter your email above, then choose resend confirmation.');renderAccount(document.querySelector('#app'));return;}
+        authEmail=mail;setNotice('Requesting a new confirmation email…');renderAccount(document.querySelector('#app'));
+        try{const {error}=await client.auth.resend({type:'signup',email:mail,options:{emailRedirectTo}});if(error)throw error;setNotice('If this address has an unconfirmed account, a fresh confirmation email has been sent. Check your inbox and spam folder.');await renderAccount(document.querySelector('#app'));}
+        catch(error){setNotice(error.message||'Could not resend the confirmation email.',true);await renderAccount(document.querySelector('#app'));}
+      },'btn ghost'));
+      form.append(button('Forgot password?',async()=>{
+        const mail=email.value.trim();if(!mail){email.focus();setNotice('Enter your email above, then choose Forgot password.');renderAccount(document.querySelector('#app'));return;}
+        authEmail=mail;setNotice('Requesting a password reset email…');renderAccount(document.querySelector('#app'));
+        try{const {error}=await client.auth.resetPasswordForEmail(mail,{redirectTo:emailRedirectTo});if(error)throw error;setNotice('If this email has an account, a password reset link has been sent. Check your inbox and spam folder.');await renderAccount(document.querySelector('#app'));}
+        catch(error){setNotice(error.message||'Could not request a password reset.',true);await renderAccount(document.querySelector('#app'));}
+      },'btn ghost'));
+    }
     form.addEventListener('submit',async event=>{
       event.preventDefault();
       const values=new FormData(form), mail=String(values.get('email')||'').trim(), pass=String(values.get('password')||'');
@@ -219,6 +227,20 @@
     const token=++viewToken;
     if(!projectUrl||!publicKey){root.replaceChildren(setupNotice());return;}
     if(!client){root.replaceChildren(node('div',{class:'account-page'},[pageHeader(),node('section',{class:'panel account-panel account-notice account-error',text:'The Supabase client did not load. The game still works offline; account features need an internet connection.'})]));return;}
+    if(new URLSearchParams(window.location.hash.replace(/^#/,'' )).get('type')==='recovery'){
+      root.replaceChildren(node('div',{class:'account-page'},[pageHeader(),node('section',{class:'panel account-panel',text:'Checking password reset link…'})]));
+      try{const {data,error}=await client.auth.getSession();if(error)throw error;if(token!==viewToken)return;if(!data.session)throw new Error('This password reset link is invalid or expired. Request a new one from Sign in.');
+        const form=node('form',{class:'account-form account-panel'},[
+          node('div',{class:'eyebrow',text:'Account recovery'}),node('h2',{text:'Choose a new password'}),
+          label('New password',input('password','new_password','At least 10 characters',{minlength:'10',autocomplete:'new-password',required:true})),
+          label('Confirm new password',input('password','confirm_password','Enter it again',{minlength:'10',autocomplete:'new-password',required:true})),
+          node('button',{class:'btn primary',type:'submit',text:'Save new password'})
+        ]);
+        form.addEventListener('submit',async event=>{event.preventDefault();const values=new FormData(form),password=String(values.get('new_password')||''),confirmation=String(values.get('confirm_password')||'');if(password.length<10){setNotice('Use at least 10 characters for your password.',true);await renderAccount(root);return;}if(password!==confirmation){setNotice('The passwords do not match.',true);await renderAccount(root);return;}try{const {error:updateError}=await client.auth.updateUser({password});if(updateError)throw updateError;window.history.replaceState(null,'',`${window.location.pathname}${window.location.search}`);setNotice('Password updated. You are now signed in.');await renderAccount(root);}catch(updateError){setNotice(updateError.message||'Could not update your password.',true);await renderAccount(root);}});
+        root.replaceChildren(node('div',{class:'account-page'},[pageHeader(),noticeNode(),form].filter(Boolean)));
+      }catch(error){if(token!==viewToken)return;root.replaceChildren(node('div',{class:'account-page'},[pageHeader(),node('section',{class:'panel account-panel account-notice account-error',text:error.message||'Could not open the password reset link.'})]));}
+      return;
+    }
     root.replaceChildren(node('div',{class:'account-page'},[pageHeader(),node('section',{class:'panel account-panel',text:'Loading account…'})]));
     try{
       const {data,error}=await client.auth.getSession();if(error)throw error;if(token!==viewToken)return;
@@ -270,6 +292,12 @@
     const accountTab=document.querySelector('[data-view="account"]');if(accountTab)accountTab.click();else renderAccount(document.querySelector('#app'));
     return true;
   }
+  function openPasswordRecoveryRoute(){
+    if(new URLSearchParams(window.location.hash.replace(/^#/,'' )).get('type')!=='recovery')return false;
+    startupPromptDismissedThisVisit=true;
+    const accountTab=document.querySelector('[data-view="account"]');if(accountTab)accountTab.click();else renderAccount(document.querySelector('#app'));
+    return true;
+  }
   async function loadOnlineInventory(){
     if(!client)throw new Error('Account service is not configured.');
     const {data:sessionData,error:sessionError}=await client.auth.getSession();if(sessionError)throw sessionError;
@@ -284,5 +312,5 @@
   window.GlasswakeAtlas.renderAccount = renderAccount;
   window.GlasswakeAtlas.loadOnlineInventory = loadOnlineInventory;
   window.GlasswakeAtlas.showStartupAccountPrompt = showStartupAccountPrompt;
-  setTimeout(()=>{if(showAuthRedirectError())return;if(!openAccountRoute())showStartupAccountPrompt()},0);
+  setTimeout(()=>{if(showAuthRedirectError()||openPasswordRecoveryRoute())return;if(!openAccountRoute())showStartupAccountPrompt()},0);
 })();
