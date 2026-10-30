@@ -110,7 +110,7 @@
     }
 
     function openOfflineGame() {
-        var deckKeys = [null, 'ashlander_rush', 'telvanni_soulforge', 'tribunal_ward', 'dwemer_lockdown', 'redoran_rally'];
+        var deckKeys = [null, 'faith_hindu', 'faith_buddhist', 'faith_christian', 'faith_islamic', 'faith_jewish'];
         var deckChoice = (typeof $gameVariables !== 'undefined' && $gameVariables) ? Number($gameVariables.value(1)) : 0;
         var starterDeckKey = deckKeys[deckChoice] || null;
         var separator = offlineGameUrl.indexOf('?') >= 0 ? '&' : '?';

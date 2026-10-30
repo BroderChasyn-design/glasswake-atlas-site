@@ -1,4 +1,4 @@
-const CACHE_NAME = 'glasswake-atlas-v15';
+const CACHE_NAME = 'glasswake-atlas-v16';
 const APP_FILES = [
   './',
   './index.html',
