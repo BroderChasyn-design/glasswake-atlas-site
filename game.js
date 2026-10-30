@@ -175,7 +175,18 @@
     const loader=window.GlasswakeAtlas?.loadOnlineInventory;
     if(typeof loader!=='function'){toast('Online account features are unavailable.');return}
     app.replaceChildren(header('Account collection','Deck builder','Loading your playable reverse-holo cards…',[]));
-    loader().then(items=>{deckBuilderInventory=items.filter(item=>cardById[item.card_id]&&!cardById[item.card_id].exclusive&&cardById[item.card_id].kind!=='scenic'&&item.quantity>0);deckBuilderPicks=[];customDeckItems=null;renderDeckBuilder()}).catch(error=>{app.replaceChildren(header('Account collection','Deck builder','Sign in and finish account setup before building a deck from your online binder.',[el('button',{class:'btn',onclick:()=>display('account')},'Open Account & Trade'),el('button',{class:'btn ghost',onclick:()=>display('match')},'Back to Duel')]),el('section',{class:'panel account-panel account-error'},error.message||'Could not load your account binder.')})
+    loader().then(items=>{
+      deckBuilderInventory=items.filter(item=>cardById[item.card_id]&&!cardById[item.card_id].exclusive&&cardById[item.card_id].kind!=='scenic'&&item.quantity>0);
+      deckBuilderPicks=[];customDeckItems=null;renderDeckBuilder();
+    }).catch(error=>{
+      app.replaceChildren(
+        header('Account collection','Deck builder','Sign in and finish account setup before building a deck from your online binder.',[
+          el('button',{class:'btn',onclick:()=>display('account')},'Open Account & Trade'),
+          el('button',{class:'btn ghost',onclick:()=>display('match')},'Back to Duel')
+        ]),
+        el('section',{class:'panel account-panel account-error'},error.message||'Could not load your account binder.')
+      );
+    });
   }
   function renderDeckBuilder(){
     const options=[...deckBuilderInventory].sort((a,b)=>(cardById[a.card_id].name||'').localeCompare(cardById[b.card_id].name||''));
