@@ -1,6 +1,6 @@
-# Glasswake Atlas
+# God Gathering
 
-Glasswake Atlas is a self-contained, single-player card game. Its card names,
+God Gathering is a self-contained, single-player card game. Its card names,
 short lore, and generated illustrations now draw on selected stories and art
 traditions from Hindu, Buddhist, Christian, Jewish, Islamic, Sikh, Shinto, and
 Yorùbá/Ifá traditions. It does not load Morrowind, OpenMW, mods, or outside art

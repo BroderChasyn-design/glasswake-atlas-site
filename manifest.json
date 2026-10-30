@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Glasswake Atlas",
-  "short_name": "Glasswake",
-  "description": "A standalone card duel inspired by stories and art from world religions.",
+  "name": "God Gathering",
+  "short_name": "God Gathering",
+  "description": "A standalone card game inspired by stories and art from world religions.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
