@@ -216,6 +216,33 @@
       else root.replaceChildren(authView());
     }catch(error){if(token!==viewToken)return;root.replaceChildren(node('div',{class:'account-page'},[pageHeader(),noticeNode(),node('section',{class:'panel account-panel account-notice account-error',text:error.message||'Account service unavailable.'})].filter(Boolean)));}
   }
+  function showStartupAccountPrompt(){
+    if(!client)return;
+    try{if(localStorage.getItem('god-gathering-account-prompt-dismissed')==='1')return;}catch{}
+    client.auth.getSession().then(({data,error})=>{
+      if(error||data?.session||document.querySelector('.startup-account-backdrop'))return;
+      const backdrop=node('div',{class:'startup-account-backdrop',role:'presentation'});
+      const openAccount=async mode=>{
+        try{localStorage.setItem('god-gathering-account-prompt-dismissed','1');}catch{}
+        authMode=mode;setNotice('');backdrop.remove();
+        document.querySelector('[data-view="account"]')?.click();
+        await renderAccount(document.querySelector('#app'));
+      };
+      const dismiss=()=>{try{localStorage.setItem('god-gathering-account-prompt-dismissed','1');}catch{}backdrop.remove();};
+      backdrop.append(node('section',{class:'panel startup-account-prompt',role:'dialog','aria-modal':'true','aria-labelledby':'startup-account-title'},[
+        node('div',{class:'eyebrow',text:'Welcome to God Gathering'}),
+        node('h2',{id:'startup-account-title',text:'Create your player account'}),
+        node('p',{class:'account-help',text:'Sign up with your email to protect your online collection and trade cards. Your email is used to sign in and is never shown on your public profile.'}),
+        node('p',{class:'account-help',text:'You can continue offline without an account. Device-only progress stays on this device.'}),
+        node('div',{class:'startup-account-actions'},[
+          button('Create account with email',()=>openAccount('signup'),'btn primary'),
+          button('I already have an account',()=>openAccount('signin'),'btn'),
+          button('Continue offline',dismiss,'btn ghost')
+        ])
+      ]));
+      document.body.append(backdrop);
+    }).catch(()=>{});
+  }
   async function loadOnlineInventory(){
     if(!client)throw new Error('Account service is not configured.');
     const {data:sessionData,error:sessionError}=await client.auth.getSession();if(sessionError)throw sessionError;
@@ -229,4 +256,6 @@
   window.GlasswakeAtlas = window.GlasswakeAtlas || {};
   window.GlasswakeAtlas.renderAccount = renderAccount;
   window.GlasswakeAtlas.loadOnlineInventory = loadOnlineInventory;
+  window.GlasswakeAtlas.showStartupAccountPrompt = showStartupAccountPrompt;
+  setTimeout(showStartupAccountPrompt,0);
 })();
