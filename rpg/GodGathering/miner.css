@@ -1,0 +1,12 @@
+.miner-panel{grid-column:1/-1}
+.miner-status{margin:14px 0;padding:11px 12px;border:1px solid #79938666;border-radius:5px;background:#111f23;color:var(--mint);font:11px/1.6 'DM Mono',monospace;overflow-wrap:anywhere}
+.miner-log{max-height:115px;overflow:auto;margin:0 0 14px;padding:8px 10px;border:1px solid #ffffff14;border-radius:5px;color:#8ea49a;font:9px/1.6 'DM Mono',monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+.field-label{display:grid;gap:6px;color:#aebbb4;font:10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em}
+.miner-input{width:100%;text-transform:none;letter-spacing:normal}
+.pool-fields{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:10px;margin:11px 0}
+.miner-tls{display:flex;gap:8px;align-items:center;margin:12px 0;color:#aebbb4;font-size:11px}
+.miner-tls input{accent-color:#d9b778}
+.miner-buttons{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}
+.miner-buttons button:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.miner-panel>.select{margin-top:2px}
+@media(max-width:700px){.miner-panel{grid-column:auto}.pool-fields{grid-template-columns:1fr 100px}}

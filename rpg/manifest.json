@@ -1,0 +1,17 @@
+{
+  "name": "God Gathering: Path of Stories",
+  "short_name": "God Gathering RPG",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#101b22",
+  "theme_color": "#101b22",
+  "icons": [
+    {
+      "src": "icon/icon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
